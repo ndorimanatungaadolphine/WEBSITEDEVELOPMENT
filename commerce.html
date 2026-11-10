@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget E-Commerce</title>
+    
+</head>
+<style>
+    
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+
+
+header {
+    height: 68px;
+    background-color: #f5fbf2;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    gap: 28px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 360px;
+}
+
+.logo img {
+    width: 80px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-text h2 {
+    font-size: 23px;
+    color: #17212c;
+    white-space: nowrap;
+}
+
+.logo-text h2 span {
+    color: #159638;
+}
+
+.logo-text p {
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+
+
+.line {
+    height: 44px;
+    width: 2px;
+    background-color: #17212c;
+}
+
+
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #17212c;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 9px;
+}
+
+nav .active {
+    background-color: #159638;
+    color: white;
+}
+
+
+
+.cart {
+    margin-left: auto;
+    font-size: 27px;
+    position: relative;
+    color: black;
+}
+
+.cart span {
+    position: absolute;
+    top: -7px;
+    right: -9px;
+    background-color: #159638;
+    color: white;
+    font-size: 11px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+
+
+
+.banner {
+    margin: 2px 12px 18px;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 238px;
+    object-fit: cover;
+    border-radius: 11px;
+    display: block;
+}
+
+
+
+.shop-now {
+    position: absolute;
+    bottom: 25px;
+    left: 45px;
+    background-color: #159638;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.shop-now:hover {
+    background-color: #087c2b;
+}
+
+
+
+
+.products {
+    padding: 0 25px 16px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.heading h2 {
+    font-size: 23px;
+    border-left: 7px solid #159638;
+    padding-left: 12px;
+}
+
+
+
+button {
+    background-color: #159638;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.heading button {
+    padding: 8px 17px;
+    font-size: 13px;
+}
+
+
+
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.product {
+    height: 226px;
+    border: 1px solid #e5e5e5;
+    border-radius: 9px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    padding: 5px 8px;
+}
+
+.product img {
+    width: 100%;
+    height: 132px;
+    object-fit: contain;
+}
+
+.product h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.product p {
+    color: #087c2b;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.product del {
+    color: #777;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.product button {
+    width: 62%;
+    min-width: 130px;
+    padding: 7px;
+    font-size: 13px;
+   
+}
+
+
+
+footer {
+    background-color: #111b26;
+    color: white;
+}
+
+.footer-container {
+    height: 79px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr 0.9fr;
+    align-items: center;
+    padding: 9px 20px;
+}
+
+
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    width: 60px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.footer-logo .logo-text h2 {
+    font-size: 20px;
+    color: white;
+    white-space: nowrap;
+}
+
+.footer-logo .logo-text h2 span {
+    color: #29dc4c;
+}
+
+.footer-logo .logo-text p {
+    color: white;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+
+
+.footer-section {
+    height: 53px;
+    border-left: 1px solid #c9d0d5;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-section h3 {
+    color: #29dc4c;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-section p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icons span {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color: #17212c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+
+.copyright {
+    height: 30px;
+    background-color: #20a34a;
+    text-align: center;
+    padding: 7px;
+    font-size: 12px;
+    color: white;
+}
+
+
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 8px 15px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .footer-section {
+        padding-left: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 2px;
+    }
+
+    nav a {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .products {
+        padding: 0 12px 15px;
+    }
+
+    .heading h2 {
+        font-size: 18px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section {
+        border-left: none;
+        border-top: 1px solid #65707a;
+        padding: 12px 0 0;
+    }
+
+    .shop-now {
+        left: 20px;
+        bottom: 15px;
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+}
+
+</style>
+
+<body>
+
+   
+    <header>
+
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+
+            <div class="logo-text">
+                <h2>Gadget <span>E-Commerce</span></h2>
+                <p>Smart Gadgets, Better Life</p>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+       
+        <nav>
+            <a href="#" class="active">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SERVICE</a>
+            <a href="#">LOGIN</a>
+        </nav>
+
+       
+        <div class="cart">
+            🛒 <span>0</span>
+        </div>
+
+    </header>
+
+
+    
+    <section class="banner">
+
+        <img src="c:\Users\TUNGAADOLIPHINENDORI\Downloads\banners1).png" alt="Gadget promotion">
+
+        <a href="#products" class="shop-now">SHOP NOW</a>
+
+    </section>
+
+
+    
+    <section class="products" id="products">
+
+        <div class="heading">
+            <h2>Our Selling Products</h2>
+            <button>View All Products ➜</button>
+        </div>
+
+        <div class="product-container">
+
+            <div class="product">
+                <img src="laptop.png" alt="HP Laptop">
+                <h3>HP Laptop 15.6”</h3>
+                <p>$750 <del>$850</del></p>
+                <button>🛒 Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="phone.png" alt="Samsung Phone">
+                <h3>Samsung Galaxy A55</h3>
+                <p>$450 <del>$500</del></p>
+                <button>🛒 Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="airpods.png" alt="AirPods">
+                <h3>AirPods Pro</h3>
+                <p>$250 <del>$300</del></p>
+                <button>🛒 Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="watch.png" alt="Smart Watch">
+                <h3>Smart Watch S9</h3>
+                <p>$120 <del>$150</del></p>
+                <button>🛒 Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="headphones.png" alt="Headphones">
+                <h3>Bluetooth Headphones</h3>
+                <p>$90 <del>$120</del></p>
+                <button>🛒 Add to Cart</button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <footer>
+
+        <div class="footer-container">
+
+           
+            <div class="footer-logo">
+                <img src="c:\Users\TUNGAADOLIPHINENDORI\OneDrive - The Hope Haven Charitable Trust\Pictures\kkk.png" alt="Logo">
+
+                <div class="logo-text">
+                    <h2>Gadget <span>E-Commerce</span></h2>
+                    <p>Smart Gadgets, Better Life</p>
+                </div>
+            </div>
+
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p>
+                    <a href="#">Home</a> |
+                    <a href="#">About</a> |
+                    <a href="#">Service</a> |
+                    <a href="#">Login</a>
+                </p>
+            </div>
+
+    
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📞 +250 788 123 456</p>
+                <p>✉ info@gadgetecom.rw</p>
+            </div>
+
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+                    <span>f</span>
+                    <span>♥</span>
+                    <span>▶</span>
+                    <span>in</span>
+                </div>
+            </div>
+
+        </div>
+
+      
+        <div class="copyright">
+            © 2026 Gadget E-Commerce. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
